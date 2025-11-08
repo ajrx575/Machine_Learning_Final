@@ -10,3 +10,6 @@ with open(input_file_path, 'r') as infile, open(output_file_path, 'w') as outfil
         outfile.write(cleaned_line)
 
 coffeedf = pd.read_csv('cleaned_coffee.csv', delimiter=';')
+
+for col, data in coffeedf.items():
+    print(f'This column, {col}, has the follow number of NA vals:{data.isna().sum()}.')
